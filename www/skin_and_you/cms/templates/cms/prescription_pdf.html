@@ -1,0 +1,223 @@
+<html>
+<head>
+<style>
+/*    @page {
+        size: a4 portrait;
+        
+        @frame header_frame {           
+            -pdf-frame-content: header_content;
+            top: 0pt; 
+        }
+        
+        @frame content_frame {          
+            left: 20pt; width: 555pt; top: 155pt; height: 590pt;
+        }
+
+        @frame footer_frame {           
+            -pdf-frame-content: footer_content;
+            top: 752.1pt; 
+        }
+    }
+
+    table {
+        border: 1px solid lightgray;
+        border-collapse: collapse;
+    	width: 540pt !important;    
+    } 
+
+    td, th {
+        border: 1px solid lightgray;
+        padding: 2px;
+    } 
+
+    .width250px {
+        width: 190px !important;
+        text-align: left !important;
+    }
+
+    .width270px {
+        width: 630px !important;
+        text-align: left !important;
+    }
+
+    body {
+        font-size: 10px !important;
+    }
+
+    p {
+        font-size: 10px !important;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .thDivStyle {
+        width: 100% !important;
+        text-align: left !important;
+    
+    }
+
+    .width100px {
+       width: 100px;
+    }
+
+    .width200px {
+       width: 200px;
+    }
+
+    .width300px {
+       width: 300px;
+    }
+
+    .width150px {
+       width: 150px;
+    }
+
+    .width250p {
+       width: 250px;
+    }*/
+
+
+
+    @page {
+        size: a4 portrait;
+
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            top: 0pt;
+        }
+
+        @frame content_frame {          /* Content Frame */
+            left: 20pt; width: 555pt; top: 225pt; height: 510pt;
+        }
+
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            top: 752.1pt;
+        }
+    }
+
+    table {
+        border: 1px solid darkgray;
+        border-collapse: collapse;
+    	width: 540pt !important;
+	font-size: 13px !important;
+    }
+
+    td, th {
+        border: 1px solid darkgray;
+        padding: 2px;
+	font-size: 11px !important;
+    }
+
+    .width250px {
+        width: 190px !important;
+        text-align: left !important;
+    }
+
+    .width270px {
+        width: 630px !important;
+        text-align: left !important;
+    }
+
+    body {
+        font-size: 12px !important;
+    }
+
+    p {
+        font-size: 12px !important;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+	
+    }
+
+    .thDivStyle {
+        width: 100% !important;
+        text-align: left !important;
+	font-size: 12px !important;
+
+    }
+
+    .width100px {
+       width: 100px;
+    }
+
+    .width200px {
+       width: 200px;
+    }
+
+    .width300px {
+       width: 300px;
+    }
+
+    .width150px {
+       width: 150px;
+    }
+
+    .width250p {
+       width: 250px;
+    }
+
+    .width350px {
+       width: 350px;
+    }
+
+    .margintop3px {
+       margin-top: 3px !important;
+    }
+
+    .text-center {
+	text-align: center !important;
+    }
+
+
+
+</style>
+</head>
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+        <img src='images/header.jpg' alt='header image'>
+    </div>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+   <!-- <div id="footer_content">
+        <img src='images/footer.jpg' alt='footer image'>
+   </div> -->
+
+    
+    <!-- HTML Content -->
+    <p><b>Name - </b> {{info.name}} ({{info.patient_obj.age}}, {{info.gender}}) {{info.mobile}}</p>
+    <p><b>Date - </b> {{info.date}}</p>
+    
+
+    {% if medicine_list %}
+    <br> 
+    <b class="margintop3px">Medicines</b>
+    <table>
+        <tr>
+            <th class="width250p">Medicine</th>
+            <th class="width150px">Dose</th>
+            <th class="width150px">Frequency</th>
+            <th class="width150px">Course Duration</th>
+            <th class="width250p">Instruction / Remark</th>
+        </tr>
+        {% for m in medicine_list %}
+            <tr>
+                <td class="width250p">{{m.medicine.name}}</td>
+               <td class="width150px ">{{m.dose}}</td>
+                <td class="width150px">{{m.frequency}}</td>
+                <td class="width150px">{{m.duration_count}} {{m.duration_name}}</td>
+                <td class="width250p">{{m.instruction}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+
+
+
+
+    
+</body>
+</html>

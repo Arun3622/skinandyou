@@ -1,0 +1,55 @@
+# Local runtimes and developer state
+/.local/
+/.playwright-cli/
+**/__pycache__/
+**/*.py[cod]
+**/*.log
+**/.venv/
+**/venv/
+**/node_modules/
+
+# User, clinic, and production data
+**/media/
+**/staticfiles/
+**/*.sql
+**/*.sqlite3*
+**/*.db
+**/*.csv
+**/*.xlsx
+**/*.zip
+
+# Credentials, keys, and local configuration
+**/.env
+**/.env.*
+**/local_settings.py
+**/*settings.py_copy
+**/google_creds/
+**/client_secret*.json
+**/client_secrets.json
+**/token.json
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.crt
+
+# Deployment and generated assets
+/www/SSL/
+/www/db_backup/
+/www/python_env/
+/www/html/
+/www/skin_and_you/static/
+/www/skin_and_you/setup.py
+/www/skin_and_you/script/
+/www/skin_and_you/files/
+/www/skin_and_you/requirments.txt
+/www/skin_and_you_ui/assets/libs/@fortawesome/fontawesome-pro/
+/www/skin_and_you_ui/assets/img/theme/light/doctor-geeta.jpg
+/www/skin_and_you_ui/footer.jpg
+/www/skin_and_you_ui/footer.jpg1
+/www/skin_and_you_ui/header.jpg2
+/www/skin_and_you_ui/header.png
+**/*.map
+
+# Preserve the existing nested repository without publishing it as a submodule
+/www/skin_and_you/.git
